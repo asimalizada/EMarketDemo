@@ -31,16 +31,7 @@ namespace EMarketDemo.FormsUI
         {
             this.dgwProducts = new System.Windows.Forms.DataGridView();
             this.gbxCrud = new System.Windows.Forms.GroupBox();
-            this.gbxAdd = new System.Windows.Forms.GroupBox();
-            this.lblProductNameAdd = new System.Windows.Forms.Label();
-            this.lblCategoryIdAdd = new System.Windows.Forms.Label();
-            this.lblPriceAdd = new System.Windows.Forms.Label();
-            this.lblUnitsInStockAdd = new System.Windows.Forms.Label();
-            this.tbxNameAdd = new System.Windows.Forms.TextBox();
-            this.tbxCategoryIdAdd = new System.Windows.Forms.TextBox();
-            this.tbxPriceAdd = new System.Windows.Forms.TextBox();
-            this.tbxUnitsInStockAdd = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.gbxUpdate = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tbxUnitsInStockUpdate = new System.Windows.Forms.TextBox();
@@ -51,11 +42,20 @@ namespace EMarketDemo.FormsUI
             this.lblPriceUpdate = new System.Windows.Forms.Label();
             this.lblCategoryIdUpdate = new System.Windows.Forms.Label();
             this.lblNameUpdate = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.gbxAdd = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.tbxUnitsInStockAdd = new System.Windows.Forms.TextBox();
+            this.tbxPriceAdd = new System.Windows.Forms.TextBox();
+            this.tbxCategoryIdAdd = new System.Windows.Forms.TextBox();
+            this.tbxNameAdd = new System.Windows.Forms.TextBox();
+            this.lblUnitsInStockAdd = new System.Windows.Forms.Label();
+            this.lblPriceAdd = new System.Windows.Forms.Label();
+            this.lblCategoryIdAdd = new System.Windows.Forms.Label();
+            this.lblProductNameAdd = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.gbxCrud.SuspendLayout();
-            this.gbxAdd.SuspendLayout();
             this.gbxUpdate.SuspendLayout();
+            this.gbxAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwProducts
@@ -82,105 +82,14 @@ namespace EMarketDemo.FormsUI
             this.gbxCrud.TabStop = false;
             this.gbxCrud.Text = "Crud";
             // 
-            // gbxAdd
+            // btnDelete
             // 
-            this.gbxAdd.Controls.Add(this.btnAdd);
-            this.gbxAdd.Controls.Add(this.tbxUnitsInStockAdd);
-            this.gbxAdd.Controls.Add(this.tbxPriceAdd);
-            this.gbxAdd.Controls.Add(this.tbxCategoryIdAdd);
-            this.gbxAdd.Controls.Add(this.tbxNameAdd);
-            this.gbxAdd.Controls.Add(this.lblUnitsInStockAdd);
-            this.gbxAdd.Controls.Add(this.lblPriceAdd);
-            this.gbxAdd.Controls.Add(this.lblCategoryIdAdd);
-            this.gbxAdd.Controls.Add(this.lblProductNameAdd);
-            this.gbxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbxAdd.Location = new System.Drawing.Point(21, 48);
-            this.gbxAdd.Name = "gbxAdd";
-            this.gbxAdd.Size = new System.Drawing.Size(303, 248);
-            this.gbxAdd.TabIndex = 0;
-            this.gbxAdd.TabStop = false;
-            this.gbxAdd.Text = "Add";
-            // 
-            // lblProductNameAdd
-            // 
-            this.lblProductNameAdd.AutoSize = true;
-            this.lblProductNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblProductNameAdd.Location = new System.Drawing.Point(15, 42);
-            this.lblProductNameAdd.Name = "lblProductNameAdd";
-            this.lblProductNameAdd.Size = new System.Drawing.Size(64, 25);
-            this.lblProductNameAdd.TabIndex = 0;
-            this.lblProductNameAdd.Text = "Name";
-            // 
-            // lblCategoryIdAdd
-            // 
-            this.lblCategoryIdAdd.AutoSize = true;
-            this.lblCategoryIdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblCategoryIdAdd.Location = new System.Drawing.Point(15, 77);
-            this.lblCategoryIdAdd.Name = "lblCategoryIdAdd";
-            this.lblCategoryIdAdd.Size = new System.Drawing.Size(113, 25);
-            this.lblCategoryIdAdd.TabIndex = 1;
-            this.lblCategoryIdAdd.Text = "Category Id";
-            // 
-            // lblPriceAdd
-            // 
-            this.lblPriceAdd.AutoSize = true;
-            this.lblPriceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPriceAdd.Location = new System.Drawing.Point(15, 111);
-            this.lblPriceAdd.Name = "lblPriceAdd";
-            this.lblPriceAdd.Size = new System.Drawing.Size(56, 25);
-            this.lblPriceAdd.TabIndex = 2;
-            this.lblPriceAdd.Text = "Price";
-            // 
-            // lblUnitsInStockAdd
-            // 
-            this.lblUnitsInStockAdd.AutoSize = true;
-            this.lblUnitsInStockAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUnitsInStockAdd.Location = new System.Drawing.Point(15, 148);
-            this.lblUnitsInStockAdd.Name = "lblUnitsInStockAdd";
-            this.lblUnitsInStockAdd.Size = new System.Drawing.Size(131, 25);
-            this.lblUnitsInStockAdd.TabIndex = 3;
-            this.lblUnitsInStockAdd.Text = "Units in Stock";
-            // 
-            // tbxNameAdd
-            // 
-            this.tbxNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbxNameAdd.Location = new System.Drawing.Point(177, 39);
-            this.tbxNameAdd.Name = "tbxNameAdd";
-            this.tbxNameAdd.Size = new System.Drawing.Size(109, 30);
-            this.tbxNameAdd.TabIndex = 4;
-            // 
-            // tbxCategoryIdAdd
-            // 
-            this.tbxCategoryIdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbxCategoryIdAdd.Location = new System.Drawing.Point(177, 74);
-            this.tbxCategoryIdAdd.Name = "tbxCategoryIdAdd";
-            this.tbxCategoryIdAdd.Size = new System.Drawing.Size(109, 30);
-            this.tbxCategoryIdAdd.TabIndex = 5;
-            // 
-            // tbxPriceAdd
-            // 
-            this.tbxPriceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbxPriceAdd.Location = new System.Drawing.Point(177, 108);
-            this.tbxPriceAdd.Name = "tbxPriceAdd";
-            this.tbxPriceAdd.Size = new System.Drawing.Size(109, 30);
-            this.tbxPriceAdd.TabIndex = 6;
-            // 
-            // tbxUnitsInStockAdd
-            // 
-            this.tbxUnitsInStockAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbxUnitsInStockAdd.Location = new System.Drawing.Point(177, 145);
-            this.tbxUnitsInStockAdd.Name = "tbxUnitsInStockAdd";
-            this.tbxUnitsInStockAdd.Size = new System.Drawing.Size(109, 30);
-            this.tbxUnitsInStockAdd.TabIndex = 7;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(174, 200);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 42);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(438, 340);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(179, 42);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // gbxUpdate
             // 
@@ -282,14 +191,105 @@ namespace EMarketDemo.FormsUI
             this.lblNameUpdate.TabIndex = 0;
             this.lblNameUpdate.Text = "Name";
             // 
-            // btnDelete
+            // gbxAdd
             // 
-            this.btnDelete.Location = new System.Drawing.Point(438, 340);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(179, 42);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.gbxAdd.Controls.Add(this.btnAdd);
+            this.gbxAdd.Controls.Add(this.tbxUnitsInStockAdd);
+            this.gbxAdd.Controls.Add(this.tbxPriceAdd);
+            this.gbxAdd.Controls.Add(this.tbxCategoryIdAdd);
+            this.gbxAdd.Controls.Add(this.tbxNameAdd);
+            this.gbxAdd.Controls.Add(this.lblUnitsInStockAdd);
+            this.gbxAdd.Controls.Add(this.lblPriceAdd);
+            this.gbxAdd.Controls.Add(this.lblCategoryIdAdd);
+            this.gbxAdd.Controls.Add(this.lblProductNameAdd);
+            this.gbxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbxAdd.Location = new System.Drawing.Point(21, 48);
+            this.gbxAdd.Name = "gbxAdd";
+            this.gbxAdd.Size = new System.Drawing.Size(303, 248);
+            this.gbxAdd.TabIndex = 0;
+            this.gbxAdd.TabStop = false;
+            this.gbxAdd.Text = "Add";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(174, 200);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(112, 42);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // tbxUnitsInStockAdd
+            // 
+            this.tbxUnitsInStockAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxUnitsInStockAdd.Location = new System.Drawing.Point(177, 145);
+            this.tbxUnitsInStockAdd.Name = "tbxUnitsInStockAdd";
+            this.tbxUnitsInStockAdd.Size = new System.Drawing.Size(109, 30);
+            this.tbxUnitsInStockAdd.TabIndex = 7;
+            // 
+            // tbxPriceAdd
+            // 
+            this.tbxPriceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxPriceAdd.Location = new System.Drawing.Point(177, 108);
+            this.tbxPriceAdd.Name = "tbxPriceAdd";
+            this.tbxPriceAdd.Size = new System.Drawing.Size(109, 30);
+            this.tbxPriceAdd.TabIndex = 6;
+            // 
+            // tbxCategoryIdAdd
+            // 
+            this.tbxCategoryIdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxCategoryIdAdd.Location = new System.Drawing.Point(177, 74);
+            this.tbxCategoryIdAdd.Name = "tbxCategoryIdAdd";
+            this.tbxCategoryIdAdd.Size = new System.Drawing.Size(109, 30);
+            this.tbxCategoryIdAdd.TabIndex = 5;
+            // 
+            // tbxNameAdd
+            // 
+            this.tbxNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxNameAdd.Location = new System.Drawing.Point(177, 39);
+            this.tbxNameAdd.Name = "tbxNameAdd";
+            this.tbxNameAdd.Size = new System.Drawing.Size(109, 30);
+            this.tbxNameAdd.TabIndex = 4;
+            // 
+            // lblUnitsInStockAdd
+            // 
+            this.lblUnitsInStockAdd.AutoSize = true;
+            this.lblUnitsInStockAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUnitsInStockAdd.Location = new System.Drawing.Point(15, 148);
+            this.lblUnitsInStockAdd.Name = "lblUnitsInStockAdd";
+            this.lblUnitsInStockAdd.Size = new System.Drawing.Size(131, 25);
+            this.lblUnitsInStockAdd.TabIndex = 3;
+            this.lblUnitsInStockAdd.Text = "Units in Stock";
+            // 
+            // lblPriceAdd
+            // 
+            this.lblPriceAdd.AutoSize = true;
+            this.lblPriceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPriceAdd.Location = new System.Drawing.Point(15, 111);
+            this.lblPriceAdd.Name = "lblPriceAdd";
+            this.lblPriceAdd.Size = new System.Drawing.Size(56, 25);
+            this.lblPriceAdd.TabIndex = 2;
+            this.lblPriceAdd.Text = "Price";
+            // 
+            // lblCategoryIdAdd
+            // 
+            this.lblCategoryIdAdd.AutoSize = true;
+            this.lblCategoryIdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCategoryIdAdd.Location = new System.Drawing.Point(15, 77);
+            this.lblCategoryIdAdd.Name = "lblCategoryIdAdd";
+            this.lblCategoryIdAdd.Size = new System.Drawing.Size(113, 25);
+            this.lblCategoryIdAdd.TabIndex = 1;
+            this.lblCategoryIdAdd.Text = "Category Id";
+            // 
+            // lblProductNameAdd
+            // 
+            this.lblProductNameAdd.AutoSize = true;
+            this.lblProductNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblProductNameAdd.Location = new System.Drawing.Point(15, 42);
+            this.lblProductNameAdd.Name = "lblProductNameAdd";
+            this.lblProductNameAdd.Size = new System.Drawing.Size(64, 25);
+            this.lblProductNameAdd.TabIndex = 0;
+            this.lblProductNameAdd.Text = "Name";
             // 
             // Form1
             // 
@@ -300,12 +300,13 @@ namespace EMarketDemo.FormsUI
             this.Controls.Add(this.dgwProducts);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).EndInit();
             this.gbxCrud.ResumeLayout(false);
-            this.gbxAdd.ResumeLayout(false);
-            this.gbxAdd.PerformLayout();
             this.gbxUpdate.ResumeLayout(false);
             this.gbxUpdate.PerformLayout();
+            this.gbxAdd.ResumeLayout(false);
+            this.gbxAdd.PerformLayout();
             this.ResumeLayout(false);
 
         }
