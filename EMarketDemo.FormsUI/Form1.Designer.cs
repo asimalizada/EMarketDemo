@@ -68,6 +68,7 @@ namespace EMarketDemo.FormsUI
             this.dgwProducts.RowTemplate.Height = 24;
             this.dgwProducts.Size = new System.Drawing.Size(1101, 280);
             this.dgwProducts.TabIndex = 0;
+            this.dgwProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProducts_CellClick);
             // 
             // gbxCrud
             // 
@@ -90,6 +91,7 @@ namespace EMarketDemo.FormsUI
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // gbxUpdate
             // 
@@ -118,6 +120,7 @@ namespace EMarketDemo.FormsUI
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // tbxUnitsInStockUpdate
             // 
@@ -218,6 +221,7 @@ namespace EMarketDemo.FormsUI
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbxUnitsInStockAdd
             // 
