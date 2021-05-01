@@ -52,10 +52,21 @@ namespace EMarketDemo.FormsUI
             this.lblPriceAdd = new System.Windows.Forms.Label();
             this.lblCategoryIdAdd = new System.Windows.Forms.Label();
             this.lblProductNameAdd = new System.Windows.Forms.Label();
+            this.gbxSearching = new System.Windows.Forms.GroupBox();
+            this.cbxCategories = new System.Windows.Forms.ComboBox();
+            this.tbxProductNameSearch = new System.Windows.Forms.TextBox();
+            this.lblProductNameSearch = new System.Windows.Forms.Label();
+            this.gbxByPrice = new System.Windows.Forms.GroupBox();
+            this.lblByPriceMin = new System.Windows.Forms.Label();
+            this.lblByPriceMax = new System.Windows.Forms.Label();
+            this.tbxByPriceMin = new System.Windows.Forms.TextBox();
+            this.tbxByPriceMax = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.gbxCrud.SuspendLayout();
             this.gbxUpdate.SuspendLayout();
             this.gbxAdd.SuspendLayout();
+            this.gbxSearching.SuspendLayout();
+            this.gbxByPrice.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwProducts
@@ -66,7 +77,7 @@ namespace EMarketDemo.FormsUI
             this.dgwProducts.Name = "dgwProducts";
             this.dgwProducts.RowHeadersWidth = 51;
             this.dgwProducts.RowTemplate.Height = 24;
-            this.dgwProducts.Size = new System.Drawing.Size(1101, 280);
+            this.dgwProducts.Size = new System.Drawing.Size(1170, 280);
             this.dgwProducts.TabIndex = 0;
             this.dgwProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProducts_CellClick);
             // 
@@ -295,15 +306,111 @@ namespace EMarketDemo.FormsUI
             this.lblProductNameAdd.TabIndex = 0;
             this.lblProductNameAdd.Text = "Name";
             // 
+            // gbxSearching
+            // 
+            this.gbxSearching.Controls.Add(this.gbxByPrice);
+            this.gbxSearching.Controls.Add(this.cbxCategories);
+            this.gbxSearching.Controls.Add(this.tbxProductNameSearch);
+            this.gbxSearching.Controls.Add(this.lblProductNameSearch);
+            this.gbxSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbxSearching.Location = new System.Drawing.Point(708, 331);
+            this.gbxSearching.Name = "gbxSearching";
+            this.gbxSearching.Size = new System.Drawing.Size(474, 419);
+            this.gbxSearching.TabIndex = 2;
+            this.gbxSearching.TabStop = false;
+            this.gbxSearching.Text = "Searching";
+            // 
+            // cbxCategories
+            // 
+            this.cbxCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbxCategories.FormattingEnabled = true;
+            this.cbxCategories.Location = new System.Drawing.Point(32, 104);
+            this.cbxCategories.Name = "cbxCategories";
+            this.cbxCategories.Size = new System.Drawing.Size(179, 37);
+            this.cbxCategories.TabIndex = 2;
+            this.cbxCategories.SelectedIndexChanged += new System.EventHandler(this.cbxCategories_SelectedIndexChanged);
+            // 
+            // tbxProductNameSearch
+            // 
+            this.tbxProductNameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxProductNameSearch.Location = new System.Drawing.Point(265, 48);
+            this.tbxProductNameSearch.Name = "tbxProductNameSearch";
+            this.tbxProductNameSearch.Size = new System.Drawing.Size(181, 34);
+            this.tbxProductNameSearch.TabIndex = 1;
+            this.tbxProductNameSearch.TextChanged += new System.EventHandler(this.tbxProductNameSearch_TextChanged);
+            // 
+            // lblProductNameSearch
+            // 
+            this.lblProductNameSearch.AutoSize = true;
+            this.lblProductNameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblProductNameSearch.Location = new System.Drawing.Point(27, 51);
+            this.lblProductNameSearch.Name = "lblProductNameSearch";
+            this.lblProductNameSearch.Size = new System.Drawing.Size(162, 29);
+            this.lblProductNameSearch.TabIndex = 0;
+            this.lblProductNameSearch.Text = "Product name";
+            // 
+            // gbxByPrice
+            // 
+            this.gbxByPrice.Controls.Add(this.tbxByPriceMax);
+            this.gbxByPrice.Controls.Add(this.tbxByPriceMin);
+            this.gbxByPrice.Controls.Add(this.lblByPriceMax);
+            this.gbxByPrice.Controls.Add(this.lblByPriceMin);
+            this.gbxByPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbxByPrice.Location = new System.Drawing.Point(37, 169);
+            this.gbxByPrice.Name = "gbxByPrice";
+            this.gbxByPrice.Size = new System.Drawing.Size(389, 141);
+            this.gbxByPrice.TabIndex = 3;
+            this.gbxByPrice.TabStop = false;
+            this.gbxByPrice.Text = "By Price";
+            // 
+            // lblByPriceMin
+            // 
+            this.lblByPriceMin.AutoSize = true;
+            this.lblByPriceMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblByPriceMin.Location = new System.Drawing.Point(40, 52);
+            this.lblByPriceMin.Name = "lblByPriceMin";
+            this.lblByPriceMin.Size = new System.Drawing.Size(55, 25);
+            this.lblByPriceMin.TabIndex = 0;
+            this.lblByPriceMin.Text = "Min :";
+            // 
+            // lblByPriceMax
+            // 
+            this.lblByPriceMax.AutoSize = true;
+            this.lblByPriceMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblByPriceMax.Location = new System.Drawing.Point(204, 52);
+            this.lblByPriceMax.Name = "lblByPriceMax";
+            this.lblByPriceMax.Size = new System.Drawing.Size(66, 25);
+            this.lblByPriceMax.TabIndex = 1;
+            this.lblByPriceMax.Text = "Max : ";
+            // 
+            // tbxByPriceMin
+            // 
+            this.tbxByPriceMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxByPriceMin.Location = new System.Drawing.Point(74, 87);
+            this.tbxByPriceMin.Name = "tbxByPriceMin";
+            this.tbxByPriceMin.Size = new System.Drawing.Size(100, 30);
+            this.tbxByPriceMin.TabIndex = 2;
+            this.tbxByPriceMin.TextChanged += new System.EventHandler(this.tbxByPriceMin_TextChanged);
+            // 
+            // tbxByPriceMax
+            // 
+            this.tbxByPriceMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbxByPriceMax.Location = new System.Drawing.Point(263, 83);
+            this.tbxByPriceMax.Name = "tbxByPriceMax";
+            this.tbxByPriceMax.Size = new System.Drawing.Size(100, 30);
+            this.tbxByPriceMax.TabIndex = 3;
+            this.tbxByPriceMax.TextChanged += new System.EventHandler(this.tbxByPriceMax_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 797);
+            this.ClientSize = new System.Drawing.Size(1194, 797);
+            this.Controls.Add(this.gbxSearching);
             this.Controls.Add(this.gbxCrud);
             this.Controls.Add(this.dgwProducts);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MyForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).EndInit();
             this.gbxCrud.ResumeLayout(false);
@@ -311,6 +418,10 @@ namespace EMarketDemo.FormsUI
             this.gbxUpdate.PerformLayout();
             this.gbxAdd.ResumeLayout(false);
             this.gbxAdd.PerformLayout();
+            this.gbxSearching.ResumeLayout(false);
+            this.gbxSearching.PerformLayout();
+            this.gbxByPrice.ResumeLayout(false);
+            this.gbxByPrice.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +451,15 @@ namespace EMarketDemo.FormsUI
         private System.Windows.Forms.TextBox tbxPriceAdd;
         private System.Windows.Forms.TextBox tbxCategoryIdAdd;
         private System.Windows.Forms.TextBox tbxNameAdd;
+        private System.Windows.Forms.GroupBox gbxSearching;
+        private System.Windows.Forms.TextBox tbxProductNameSearch;
+        private System.Windows.Forms.Label lblProductNameSearch;
+        private System.Windows.Forms.ComboBox cbxCategories;
+        private System.Windows.Forms.GroupBox gbxByPrice;
+        private System.Windows.Forms.TextBox tbxByPriceMax;
+        private System.Windows.Forms.TextBox tbxByPriceMin;
+        private System.Windows.Forms.Label lblByPriceMax;
+        private System.Windows.Forms.Label lblByPriceMin;
     }
 }
 

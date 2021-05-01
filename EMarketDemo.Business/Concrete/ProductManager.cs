@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using EMarketDemo.Business.Abstract;
 using EMarketDemo.DataAccess.Abstract;
 using EMarketDemo.Entities.Concrete;
@@ -38,6 +39,34 @@ namespace EMarketDemo.Business.Concrete
         public Product GetById(int id)
         {
             return _productDal.Get(p=>p.Id == id);
+        }
+
+        public List<Product> GetByProductName(string productName) 
+        {
+            return _productDal.GetAll(p=> p.ProductName
+                .ToLower().Contains(productName.ToLower()));
+        }
+
+        public List<Product> GetByCategory(int categoryId)
+        {
+            return _productDal.GetAll
+                (p => p.CategoryId == categoryId);
+        }
+
+        public List<Product> GetByPrice(decimal min, decimal max)
+        {
+            return _productDal.GetAll
+                (p => p.Price >= min & p.Price <= max);
+        }
+
+        public decimal GetMinPrice()
+        {
+            return _productDal.GetAll().Select(p => p.Price).Min();
+        }
+
+        public decimal GetMaxPrice()
+        {
+            return _productDal.GetAll().Select(p => p.Price).Max();
         }
     }
 }

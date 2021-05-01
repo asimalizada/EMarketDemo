@@ -10,5 +10,10 @@ namespace EMarketDemo.Business.Abstract
         void Delete(Product product);
         List<Product> GetAll();
         Product GetById(int id);
+        List<Product> GetByProductName(string productName);
+        List<Product> GetByCategory(int categoryId);
+        List<Product> GetByPrice(decimal min, decimal max);
+        decimal GetMinPrice();
+        decimal GetMaxPrice();
     }
 }
