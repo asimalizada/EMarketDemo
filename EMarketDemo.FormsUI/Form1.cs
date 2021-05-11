@@ -12,6 +12,7 @@ using EMarketDemo.Business.Concrete;
 using EMarketDemo.DataAccess.Concrete.EntityFramework;
 using EMarketDemo.Entities.Concrete;
 using String = System.String;
+using EMarketDemo.Business.DependencyResolvers.Ninject;
 
 namespace EMarketDemo.FormsUI
 {
@@ -21,8 +22,8 @@ namespace EMarketDemo.FormsUI
         private ICategoryService _categoryService;
         public Form1()
         {
-            _productService = new ProductManager(new EfProductDal());
-            _categoryService = new CategoryManager(new EfCategoryDal());
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
             InitializeComponent();
         }
 
@@ -141,6 +142,7 @@ namespace EMarketDemo.FormsUI
             LoadByPrice();
         }
 
+
         private void LoadByPrice()
         {
             var minPrice = tbxByPriceMin.Text;
@@ -150,7 +152,7 @@ namespace EMarketDemo.FormsUI
             {
                 min = Convert.ToDecimal(minPrice);
             }
-
+            
             var maxPrice = tbxByPriceMax.Text;
             if (!String.IsNullOrEmpty(maxPrice))
             {

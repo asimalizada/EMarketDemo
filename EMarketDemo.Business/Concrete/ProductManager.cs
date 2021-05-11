@@ -9,7 +9,7 @@ namespace EMarketDemo.Business.Concrete
 {
     public class ProductManager : IProductService // N-layered project
     {
-        private IProductDal _productDal;
+        private IProductDal _productDal; // Inversion  of Control  IoC
 
         public ProductManager(IProductDal productDal)
         {
