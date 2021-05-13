@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
+    <Compile Include="Dtos\ProductDetailsDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,5 +52,6 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

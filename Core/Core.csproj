@@ -60,6 +60,7 @@
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
     <Compile Include="DataAccess\Abstract\IEntityRepository.cs" />
     <Compile Include="DataAccess\Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Entities\Abstract\IDto.cs" />
     <Compile Include="Entities\Abstract\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

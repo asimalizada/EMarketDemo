@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using EMarketDemo.Entities.Concrete;
+using EMarketDemo.Entities.Dtos;
 
 namespace EMarketDemo.Business.Abstract
 {
@@ -15,5 +16,6 @@ namespace EMarketDemo.Business.Abstract
         List<Product> GetByPrice(decimal min, decimal max);
         decimal GetMinPrice();
         decimal GetMaxPrice();
+        List<ProductDetailsDto> GetProductDetails();
     }
 }

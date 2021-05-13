@@ -5,6 +5,7 @@ using EMarketDemo.Business.Abstract;
 using EMarketDemo.Business.CrossCuttingConcerns.Validation.FluentValidation;
 using EMarketDemo.DataAccess.Abstract;
 using EMarketDemo.Entities.Concrete;
+using EMarketDemo.Entities.Dtos;
 using FluentValidation;
 
 namespace EMarketDemo.Business.Concrete
@@ -70,6 +71,11 @@ namespace EMarketDemo.Business.Concrete
         public decimal GetMaxPrice()
         {
             return _productDal.GetAll().Select(p => p.Price).Max();
+        }
+
+        public List<ProductDetailsDto> GetProductDetails()
+        {
+            return _productDal.GetProductDetails();
         }
     }
 }
