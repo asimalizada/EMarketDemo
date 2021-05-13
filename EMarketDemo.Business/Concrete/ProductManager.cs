@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Core.CrossCuttingConcerns.Validation.FluentValidation;
 using EMarketDemo.Business.Abstract;
+using EMarketDemo.Business.CrossCuttingConcerns.Validation.FluentValidation;
 using EMarketDemo.DataAccess.Abstract;
 using EMarketDemo.Entities.Concrete;
+using FluentValidation;
 
 namespace EMarketDemo.Business.Concrete
 {
@@ -18,6 +20,7 @@ namespace EMarketDemo.Business.Concrete
 
         public void Add(Product product)
         {
+            ValidatorTool.FluentValidate(new ProductValidator(), product);
             _productDal.Add(product);
         }
 
