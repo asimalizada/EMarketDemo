@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.CrossCuttingConcerns.Validation.FluentValidation;
 using EMarketDemo.Business.Abstract;
@@ -7,6 +8,8 @@ using EMarketDemo.DataAccess.Abstract;
 using EMarketDemo.Entities.Concrete;
 using EMarketDemo.Entities.Dtos;
 using FluentValidation;
+using Core.Aspects.Postsharp.Transaction;
+using Core.Aspects.Postsharp.Validation;
 
 namespace EMarketDemo.Business.Concrete
 {
@@ -19,12 +22,13 @@ namespace EMarketDemo.Business.Concrete
             _productDal = productDal;
         }
 
+        [ValidationAspect(typeof(ProductValidator))]
         public void Add(Product product)
         {
-            ValidatorTool.FluentValidate(new ProductValidator(), product);
             _productDal.Add(product);
         }
 
+        [ValidationAspect(typeof(ProductValidator))]
         public void Update(Product product)
         {
             _productDal.Update(product);
@@ -42,12 +46,12 @@ namespace EMarketDemo.Business.Concrete
 
         public Product GetById(int id)
         {
-            return _productDal.Get(p=>p.Id == id);
+            return _productDal.Get(p => p.Id == id);
         }
 
-        public List<Product> GetByProductName(string productName) 
+        public List<Product> GetByProductName(string productName)
         {
-            return _productDal.GetAll(p=> p.ProductName
+            return _productDal.GetAll(p => p.ProductName
                 .ToLower().Contains(productName.ToLower()));
         }
 
@@ -76,6 +80,17 @@ namespace EMarketDemo.Business.Concrete
         public List<ProductDetailsDto> GetProductDetails()
         {
             return _productDal.GetProductDetails();
+        }
+
+        [TransactionAspect]
+        public void TransactionalMethod(Product product1, Product product2)
+        {
+            _productDal.Delete(product1);
+            //....
+            _productDal.Add(product1);
+            // ...
+            _productDal.Delete(product2);
+            _productDal.Add(product2);
         }
     }
 }

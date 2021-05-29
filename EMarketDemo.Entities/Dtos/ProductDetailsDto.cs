@@ -1,4 +1,5 @@
-﻿using Core.Entities.Abstract;
+﻿using System;
+using Core.Entities.Abstract;
 
 namespace EMarketDemo.Entities.Dtos
 {
@@ -10,4 +11,16 @@ namespace EMarketDemo.Entities.Dtos
         public decimal Price { get; set; }
         public int UnitsInStock { get; set; }
     }
+
+    class Obsolete : Attribute
+    {
+        private string a;
+        public Obsolete(string a)
+        {
+            this.a = a;
+        }
+
+
+    }
+
 }

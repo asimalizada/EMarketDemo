@@ -35,7 +35,7 @@ namespace EMarketDemo.FormsUI
 
         private void LoadProducts()
         {
-            dgwProducts.DataSource = _productService.GetProductDetails();
+            dgwProducts.DataSource = _productService.GetAll();
         }
 
         private void LoadCategories()
