@@ -26,7 +26,6 @@ namespace Core.Aspects.Postsharp.Validation
             {
                 ValidatorTool.FluentValidate(validatorInstance, entity);
             }
-
         }
     }
 }
