@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Aspects.Postsharp.Caching;
+using Core.Aspects.Postsharp.Logging;
 using Core.CrossCuttingConcerns.Validation.FluentValidation;
 using EMarketDemo.Business.Abstract;
 using EMarketDemo.Business.CrossCuttingConcerns.Validation.FluentValidation;
@@ -12,6 +13,7 @@ using FluentValidation;
 using Core.Aspects.Postsharp.Transaction;
 using Core.Aspects.Postsharp.Validation;
 using Core.CrossCuttingConcerns.Caching.Microsoft;
+using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 
 namespace EMarketDemo.Business.Concrete
 {
@@ -40,6 +42,7 @@ namespace EMarketDemo.Business.Concrete
         }
 
         [CacheRemoveAspect(typeof(MemoryCacheManager), "Get")]
+        //  [LogAspect(typeof(DatabaseLogger))]
         public void Delete(Product product)
         {
             _productDal.Delete(product);

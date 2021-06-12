@@ -44,7 +44,7 @@ namespace Core.Aspects.Postsharp.Caching
                 methodName,
                 string.Join(",",
                     arguments.Select(a => a != null ? a.ToString() : "<Null>")));
-
+            
             if (_cacheManager.IsAdd(key))
             {
                 args.ReturnValue = _cacheManager.Get<object>(key);
